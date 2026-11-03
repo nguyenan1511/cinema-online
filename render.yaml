@@ -1,0 +1,14 @@
+# Render Blueprint for the realtime relay (WebSockets). The website itself goes to Vercel.
+services:
+  - type: web
+    name: rap-online-relay
+    runtime: node
+    plan: free
+    buildCommand: npm ci && npm run build:server
+    startCommand: npm run start:server
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: ALLOWED_ORIGINS
+        sync: false # e.g. https://cinema-online.vercel.app

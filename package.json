@@ -10,7 +10,9 @@
     "test": "vitest run",
     "refresh-films": "node --env-file-if-exists=.env --experimental-strip-types scripts/refresh-films.ts",
     "typecheck": "tsc -p tsconfig.json",
-    "demo": "node scripts/demo-3d.mjs demo"
+    "demo": "node scripts/demo-3d.mjs demo",
+    "build:server": "esbuild server/main.ts --bundle --platform=node --format=esm --target=node20 --external:ws --outfile=server-dist/main.mjs",
+    "start:server": "node server-dist/main.mjs"
   },
   "devDependencies": {
     "@gltf-transform/core": "^4.5.1",
@@ -27,14 +29,14 @@
     "tailwindcss": "^4.3.3",
     "typescript": "^7.0.2",
     "vite": "^8.3.5",
-    "vitest": "^5.0.5",
-    "ws": "^8.22.1"
+    "vitest": "^5.0.5"
   },
   "dependencies": {
     "@vercel/og": "0.11.1",
     "qrcode-generator": "^2.0.4",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
-    "three": "^0.187.0"
+    "three": "^0.187.0",
+    "ws": "^8.22.1"
   }
 }

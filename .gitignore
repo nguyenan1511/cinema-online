@@ -10,3 +10,4 @@ demo/
 # Fan-made model (Nintendo character): kept local, not published
 assets-src/pikachu-model/
 public/fan/
+server-dist
