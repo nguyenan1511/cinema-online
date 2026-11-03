@@ -1,0 +1,12 @@
+node_modules
+dist
+.vercel
+.gstack/
+*.log
+.env*
+demo/
+.env
+
+# Fan-made model (Nintendo character): kept local, not published
+assets-src/pikachu-model/
+public/fan/

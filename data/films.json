@@ -1,0 +1,382 @@
+[
+  {
+    "id": 910001,
+    "title": "Big Buck Bunny",
+    "posterPath": null,
+    "trailerKey": null,
+    "releaseDate": "2008-05-30",
+    "nowPlaying": true,
+    "room": 1,
+    "showtimes": [
+      "0930",
+      "1230",
+      "1530",
+      "1830",
+      "2115"
+    ],
+    "video": {
+      "webm": "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c0/Big_Buck_Bunny_4K.webm.480p.vp9.webm",
+      "mp4": "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c0/Big_Buck_Bunny_4K.webm.360p.mpeg4.mov",
+      "minutes": 10,
+      "genre": "Hoạt hình hài",
+      "blurb": "Chú thỏ khổng lồ hiền lành trả đũa ba con gặm nhấm chuyên bắt nạt.",
+      "credit": "© Blender Foundation · blender.org · CC BY 3.0",
+      "poster": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Big_buck_bunny_poster_big.jpg/500px-Big_buck_bunny_poster_big.jpg"
+    }
+  },
+  {
+    "id": 910002,
+    "title": "Sintel",
+    "posterPath": null,
+    "trailerKey": null,
+    "releaseDate": "2010-09-27",
+    "nowPlaying": true,
+    "room": 2,
+    "showtimes": [
+      "1015",
+      "1345",
+      "1700",
+      "2030"
+    ],
+    "video": {
+      "webm": "https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f1/Sintel_movie_4K.webm.480p.vp9.webm",
+      "mp4": "https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f1/Sintel_movie_4K.webm.360p.mpeg4.mov",
+      "minutes": 15,
+      "genre": "Phiêu lưu kỳ ảo",
+      "blurb": "Cô gái Sintel vượt núi tuyết đi tìm chú rồng nhỏ bị bắt mất.",
+      "credit": "© Blender Foundation · blender.org · CC BY 3.0",
+      "poster": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Sintel_poster.jpg/500px-Sintel_poster.jpg"
+    }
+  },
+  {
+    "id": 910003,
+    "title": "Tears of Steel",
+    "posterPath": null,
+    "trailerKey": null,
+    "releaseDate": "2012-09-26",
+    "nowPlaying": true,
+    "room": 3,
+    "showtimes": [
+      "0900",
+      "1200",
+      "1530",
+      "1845",
+      "2200"
+    ],
+    "video": {
+      "webm": "https://upload.wikimedia.org/wikipedia/commons/transcoded/1/10/Tears_of_Steel_in_4k_-_Official_Blender_Foundation_release.webm.480p.vp9.webm",
+      "mp4": "https://upload.wikimedia.org/wikipedia/commons/transcoded/1/10/Tears_of_Steel_in_4k_-_Official_Blender_Foundation_release.webm.360p.mpeg4.mov",
+      "minutes": 12,
+      "genre": "Khoa học viễn tưởng",
+      "blurb": "Một nhóm chiến binh ở Amsterdam tương lai cố cứu thế giới khỏi lũ robot.",
+      "credit": "© Blender Foundation · blender.org · CC BY 3.0",
+      "poster": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Tos-poster.png/500px-Tos-poster.png"
+    }
+  },
+  {
+    "id": 910004,
+    "title": "Elephants Dream",
+    "posterPath": null,
+    "trailerKey": null,
+    "releaseDate": "2006-03-24",
+    "nowPlaying": true,
+    "room": 1,
+    "showtimes": [
+      "1115",
+      "1430",
+      "1800",
+      "2245"
+    ],
+    "video": {
+      "webm": "https://upload.wikimedia.org/wikipedia/commons/transcoded/a/a2/Elephants_Dream_%282006%29.webm.480p.vp9.webm",
+      "mp4": "https://upload.wikimedia.org/wikipedia/commons/transcoded/a/a2/Elephants_Dream_%282006%29.webm.360p.mpeg4.mov",
+      "minutes": 11,
+      "genre": "Kỳ ảo siêu thực",
+      "blurb": "Hai người lạc trong một cỗ máy khổng lồ, mỗi người thấy một thế giới khác.",
+      "credit": "© Blender Foundation · blender.org · CC BY 2.5",
+      "poster": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/ElephantsDreamPoster.jpg/500px-ElephantsDreamPoster.jpg"
+    }
+  },
+  {
+    "id": 910005,
+    "title": "Spring",
+    "posterPath": null,
+    "trailerKey": null,
+    "releaseDate": "2019-04-04",
+    "nowPlaying": true,
+    "room": 2,
+    "showtimes": [
+      "0900",
+      "1200",
+      "1530",
+      "1915"
+    ],
+    "video": {
+      "webm": "https://upload.wikimedia.org/wikipedia/commons/transcoded/a/a5/Spring_-_Blender_Open_Movie.webm.480p.vp9.webm",
+      "mp4": "https://upload.wikimedia.org/wikipedia/commons/transcoded/a/a5/Spring_-_Blender_Open_Movie.webm.360p.mpeg4.mov",
+      "minutes": 8,
+      "genre": "Hoạt hình kỳ ảo",
+      "blurb": "Cô bé chăn cừu và chú chó đối mặt thần linh cổ xưa để mùa xuân trở lại.",
+      "credit": "© Blender Foundation · blender.org · CC BY 4.0",
+      "poster": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Spring_-_Blender_Open_Movie.webm/500px--Spring_-_Blender_Open_Movie.webm.jpg"
+    }
+  },
+  {
+    "id": 910006,
+    "title": "Caminandes: Llamigos",
+    "posterPath": null,
+    "trailerKey": null,
+    "releaseDate": "2016-01-01",
+    "nowPlaying": true,
+    "room": 3,
+    "showtimes": [
+      "1300",
+      "1630",
+      "1930",
+      "2145"
+    ],
+    "video": {
+      "webm": "https://upload.wikimedia.org/wikipedia/commons/transcoded/a/ab/Caminandes_3_-_Llamigos_-_Blender_Animated_Short.webm.480p.vp9.webm",
+      "mp4": "https://upload.wikimedia.org/wikipedia/commons/transcoded/a/ab/Caminandes_3_-_Llamigos_-_Blender_Animated_Short.webm.360p.mpeg4.mov",
+      "minutes": 3,
+      "genre": "Hoạt hình ngắn",
+      "blurb": "Chú lạc đà Koro và chim cánh cụt tranh nhau một quả dâu giữa Patagonia.",
+      "credit": "© Blender Foundation · blender.org · CC BY 3.0",
+      "poster": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Blender_Foundation_-_Caminandes_-_Episode_3_-_Llamigos_-_Cover_thumbnail.png/500px-Blender_Foundation_-_Caminandes_-_Episode_3_-_Llamigos_-_Cover_thumbnail.png"
+    }
+  },
+  {
+    "id": 1283515,
+    "title": "Verity: Bí Mật Bị Chôn Vùi",
+    "posterPath": "/54MwktkK2i2GJM8fYU9jNXGaHk.jpg",
+    "trailerKey": "xdPMKhjMSFs",
+    "releaseDate": "2026-10-02",
+    "nowPlaying": true
+  },
+  {
+    "id": 1400940,
+    "title": "Clayface",
+    "posterPath": "/vyQJ8ER4DYKVrCeraQ1VGQf7Olt.jpg",
+    "trailerKey": "f7jlCqdtwdM",
+    "releaseDate": "2026-10-30",
+    "nowPlaying": true
+  },
+  {
+    "id": 1465063,
+    "title": "Hòn Đảo Quên Lãng",
+    "posterPath": "/qgWcLlSXt8dWFjX4z01dUzXOkmt.jpg",
+    "trailerKey": "PhgY8cOJiQA",
+    "releaseDate": "2026-09-25",
+    "nowPlaying": true
+  },
+  {
+    "id": 1153576,
+    "title": "Phim Street Fighter",
+    "posterPath": "/lnaGK9y2Dw1cwRz8e7X5plvYVdI.jpg",
+    "trailerKey": "U6sbm1OaJb8",
+    "releaseDate": "2026-10-16",
+    "nowPlaying": true
+  },
+  {
+    "id": 1400837,
+    "title": "Người Mẹ Khác",
+    "posterPath": "/nZYi7HeXJVfJmZ0kprb1cJBHN2g.jpg",
+    "trailerKey": "-mnTITqqiT0",
+    "releaseDate": "2026-10-09",
+    "nowPlaying": true
+  },
+  {
+    "id": 1263337,
+    "title": "Trái Tim Quái Thú",
+    "posterPath": "/2nVdUaSsD4cV2GwwZpuXbiHIXM.jpg",
+    "trailerKey": "_1F2MrfQLjo",
+    "releaseDate": "2026-09-25",
+    "nowPlaying": true
+  },
+  {
+    "id": 1255833,
+    "title": "Cá Voi Nuốt Chửng",
+    "posterPath": "/t644ur9Yj3ypD2r4y82c5GssPj3.jpg",
+    "trailerKey": "Dw-5ZGapGTQ",
+    "releaseDate": "2026-10-16",
+    "nowPlaying": true
+  },
+  {
+    "id": 1281331,
+    "title": "Phán Xét Sự Thật",
+    "posterPath": "/yPFKOAqUs6AxhLNT1igcBULvWLq.jpg",
+    "trailerKey": "R8ANzYpaZaY",
+    "releaseDate": "2026-10-09",
+    "nowPlaying": true
+  },
+  {
+    "id": 1477104,
+    "title": "Shaun the Sheep: \"Quái Lạ\" Ghé Nhà",
+    "posterPath": "/4XDUPhEjxLRyCUU5uB4XgE6kOBE.jpg",
+    "trailerKey": "daZMq0AyOMc",
+    "releaseDate": "2026-10-16",
+    "nowPlaying": true
+  },
+  {
+    "id": 1623376,
+    "title": "Blue Lock: Cuộc Chiến Của Những Tiền Đạo",
+    "posterPath": "/taGdDDoNzBYbcucNWXpNQopGHkg.jpg",
+    "trailerKey": null,
+    "releaseDate": "2026-10-09",
+    "nowPlaying": true
+  },
+  {
+    "id": 10515,
+    "title": "Laputa: Lâu Đài Trên Không",
+    "posterPath": "/l15RDgdYu62b3xHDPOodlWdMCnz.jpg",
+    "trailerKey": "6s_wR3uuWec",
+    "releaseDate": "2026-09-25",
+    "nowPlaying": true
+  },
+  {
+    "id": 916224,
+    "title": "Khóa Chặt Cửa Nào Suzume",
+    "posterPath": "/70f6AyM2U74up5MaPAZJ7AAnKKL.jpg",
+    "trailerKey": "w9HWe8zt64M",
+    "releaseDate": "2023-03-10",
+    "nowPlaying": true
+  },
+  {
+    "id": 83389,
+    "title": "Ngọn Đồi Hoa Hồng Anh",
+    "posterPath": "/4tw1Q0Hpvvac55jwz213DCI4LUQ.jpg",
+    "trailerKey": "a0DIxdy8CZA",
+    "releaseDate": "2026-10-16",
+    "nowPlaying": true
+  },
+  {
+    "id": 149871,
+    "title": "Chuyện Nàng Công Chúa Kaguya",
+    "posterPath": "/5EM4TE9wlLfvA9yQaQZdKR5RwrR.jpg",
+    "trailerKey": "iPm7HfO3mis",
+    "releaseDate": "2026-10-09",
+    "nowPlaying": true
+  },
+  {
+    "id": 1659696,
+    "title": "Kamen Rider ZEZTZ: Nhiệm Vụ Từ Biệt",
+    "posterPath": "/dg6w7NwKxoeAMxXkbYUIT03fHbD.jpg",
+    "trailerKey": null,
+    "releaseDate": "2026-10-30",
+    "nowPlaying": true
+  },
+  {
+    "id": 1489932,
+    "title": "Always Lalisa",
+    "posterPath": "/o2s3QoaBQCbGQd72d7dgLbuJE0z.jpg",
+    "trailerKey": "s6NUEu1x64I",
+    "releaseDate": "2026-10-12",
+    "nowPlaying": true
+  },
+  {
+    "id": 1511747,
+    "title": "Trại Buôn Người",
+    "posterPath": "/lwoPa795ysdVSkvmlB93HyGH1SJ.jpg",
+    "trailerKey": "eM7mM7VUv10",
+    "releaseDate": "2026-09-25",
+    "nowPlaying": true,
+    "vn": true
+  },
+  {
+    "id": 1744848,
+    "title": "Chị Chị Em Em 3",
+    "posterPath": "/8mR122VqlhcdsTDdtaPsbD7WJO6.jpg",
+    "trailerKey": "T2agdzhXOaY",
+    "releaseDate": "2026-10-30",
+    "nowPlaying": true,
+    "vn": true
+  },
+  {
+    "id": 1770234,
+    "title": "BTS World Tour 'Arirang' In São Paulo: Live Viewing",
+    "posterPath": "/co7oHM6UMhuskwfp9lzXQW9zGBw.jpg",
+    "trailerKey": null,
+    "releaseDate": "2026-10-31",
+    "nowPlaying": true
+  },
+  {
+    "id": 1319525,
+    "title": "Quyết Cua Anh Này",
+    "posterPath": "/lFrDNCEspkTMYt6Z81LCyW8eZIl.jpg",
+    "trailerKey": "2Ul_Vuzk1_g",
+    "releaseDate": "2026-10-02",
+    "nowPlaying": true
+  },
+  {
+    "id": 1692603,
+    "title": "Bò Sữa Bay",
+    "posterPath": "/y2AC6NxknGlZapSwCSYMOMxHOvl.jpg",
+    "trailerKey": null,
+    "releaseDate": "2026-11-06",
+    "vn": true,
+    "nowPlaying": true
+  },
+  {
+    "id": 1756422,
+    "title": "Án Mạng Karaoke",
+    "posterPath": "/o3LCNcEfE0J8qIQ37NKpoOq1Sj5.jpg",
+    "trailerKey": "N_jtjt1xb-o",
+    "releaseDate": "2026-10-30",
+    "vn": true,
+    "nowPlaying": true
+  },
+  {
+    "id": 1789081,
+    "title": "A Price We Have To Pay",
+    "posterPath": "/zEtZFxaSpdryW830XA6a8hg9AHz.jpg",
+    "trailerKey": null,
+    "releaseDate": "2026-10-24",
+    "vn": true,
+    "nowPlaying": true
+  },
+  {
+    "id": 1300693,
+    "title": "Water Poem",
+    "posterPath": "/sS5H4QPwSVmDF8Je6esmcqjSetn.jpg",
+    "trailerKey": null,
+    "releaseDate": "2026-10-24",
+    "vn": true,
+    "nowPlaying": true
+  },
+  {
+    "id": 1790541,
+    "title": "Lạch Cạch",
+    "posterPath": "/d1TbCC2F3zeVcJAE1o9RBqOhe6x.jpg",
+    "trailerKey": "mKoJgi-nDoM",
+    "releaseDate": "2026-10-21",
+    "vn": true,
+    "nowPlaying": true
+  },
+  {
+    "id": 1790523,
+    "title": "Những ngày xanh thẳm",
+    "posterPath": "/xuzYRyReSMHabWfXtPxggkwX3SA.jpg",
+    "trailerKey": "q5Sw24iwOco",
+    "releaseDate": "2026-10-21",
+    "vn": true,
+    "nowPlaying": true
+  },
+  {
+    "id": 1790153,
+    "title": "Cơn Sốt",
+    "posterPath": "/jsg3iZ4mqgFL2YKOqHJzMPdosrC.jpg",
+    "trailerKey": "pCFXxLOVPtI",
+    "releaseDate": "2026-10-21",
+    "vn": true,
+    "nowPlaying": true
+  },
+  {
+    "id": 1752984,
+    "title": "Cá Mặt Trăng",
+    "posterPath": "/4qFVDQfJ2m9EvXnG2ZajnLyVl9g.jpg",
+    "trailerKey": null,
+    "releaseDate": "2026-10-14",
+    "vn": true,
+    "nowPlaying": true
+  }
+]

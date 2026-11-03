@@ -1,0 +1,3 @@
+Textures and HDRIs in this folder are from Poly Haven (https://polyhaven.com), released under CC0 1.0.
+Assets: marble_01, velour_velvet, leather_red_02, oak_veneer_01, quatrefoil_jacquard_fabric, fabric_pattern_07,
+HDRIs cinema_lobby and cinema_hall. Downloaded 2026-11-03 at 1K resolution.
