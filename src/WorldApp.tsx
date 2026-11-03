@@ -505,8 +505,16 @@ export function WorldApp() {
       e.preventDefault();
       goBackRef.current();
     };
+    // Clicking the YouTube trailer moves keyboard focus into its iframe, and keys stop reaching
+    // this page (Esc did nothing while seated). Hand focus back right after the click; the click
+    // itself still reaches YouTube (play / unmute).
+    const reclaim = () => setTimeout(() => {
+      const el = document.activeElement;
+      if (el instanceof HTMLIFrameElement) { el.blur(); window.focus(); }
+    }, 0);
     addEventListener("keydown", onEsc);
-    return () => removeEventListener("keydown", onEsc);
+    addEventListener("blur", reclaim);
+    return () => { removeEventListener("keydown", onEsc); removeEventListener("blur", reclaim); };
   }, [started]);
   useEffect(() => () => { video.current?.pause(); }, []);
 
@@ -560,7 +568,7 @@ export function WorldApp() {
   const questTitle = QUEST_TITLES[step - 1];
   const objective = !started || showLeft !== null ? "" :
     queue.inQueue ? (queue.atFront ? "Đến lượt bạn, chọn phim ở quầy" : `Đang xếp hàng · còn ${queue.ahead} người`) :
-    !purchase ? (zone === "street" ? "Vào sảnh, tới Quầy vé bên trái" : "Tới Quầy vé bên trái và xếp hàng") :
+    !purchase ? (zone === "street" ? "Vào sảnh, tới Quầy vé bên trái" : "Tới Quầy vé bên trái để mua vé") :
     !gateOpen ? "Đưa vé ở cổng Soát vé · bắp nước tùy chọn" :
     zone !== "hall" ? `Đi qua cổng, vào Phòng ${purchase.room}` : `Ghế ${purchase.seat} · đi theo cột sáng vàng`;
   // "Quest complete" banner whenever the step advances.

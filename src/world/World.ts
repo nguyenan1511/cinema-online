@@ -252,7 +252,6 @@ export class World {
     this.scene.add(me.root);
     this.player = { ch: me, path: [], speed: SPEED, player: true };
 
-    for (let i = 0; i < 2; i++) this.spawnQueuer(i, true);
     this.spawnIdlers();
     this.buildGuides();
 
@@ -613,22 +612,6 @@ export class World {
   }
 
   // ======================= queue =======================
-
-  private spawnQueuer(i: number, instant = false) {
-    const ch = new Character(lookFromSeed(i * 17 + Math.floor(Math.random() * 1000)));
-    const a: Agent = { ch, path: [], speed: 1.6 + Math.random() * 0.4 };
-    if (instant) ch.root.position.copy(QUEUE_SLOTS[this.queue.length]);
-    else {
-      ch.root.position.set(-1 + Math.random() * 2, 0, 31);
-      a.path = [new THREE.Vector3(0, 0, 19), new THREE.Vector3(-2.5, 0, 14)];
-      a.entering = true;
-      a.onArrive = () => { a.entering = false; };
-    }
-    ch.root.rotation.y = -Math.PI / 2;
-    this.scene.add(ch.root);
-    this.npcs.push(a);
-    this.queue.push(a);
-  }
 
   private joinQueue() {
     if (this.queue.includes(this.player) || this.hasTicket) return;
@@ -1120,7 +1103,7 @@ export class World {
       const rope = this.mesh(new THREE.CylinderGeometry(0.035, 0.035, 7.2, 8), M.velvet, -7, 0.9, z);
       rope.rotation.z = Math.PI / 2;
     }
-    this.spots.push({ id: "queue", pos: new THREE.Vector3(-7.4, 0, 10), r: 5, label: () => (this.hasTicket || this.queue.includes(this.player) ? null : "Xếp hàng mua vé") });
+    this.spots.push({ id: "queue", pos: new THREE.Vector3(-7.4, 0, 10), r: 5, label: () => (this.hasTicket || this.queue.includes(this.player) ? null : this.queue.length ? `Xếp hàng mua vé · ${this.queue.length} người trước bạn` : "Mua vé tại quầy") });
 
     // BẮP NƯỚC: counter, popcorn machine with a warm glow, drinks fridge.
     this.mesh(new THREE.BoxGeometry(1.6, 1.1, 5.4), M.oak, 11.8, 0.55, 11.5);
@@ -1741,8 +1724,6 @@ export class World {
     }
     if (this.leader) this.drawLeader(t - this.leader.start);
 
-    // occasionally someone new walks in and queues
-    if (Math.floor(t / 9) !== Math.floor((t - dt) / 9) && this.queue.length < QUEUE_SLOTS.length - 1 && !this.seated) this.spawnQueuer(Math.floor(t));
 
     if (this.dust.visible) {
       (this.dust.material as THREE.PointsMaterial).opacity = 0.55 * this.dim.v;
