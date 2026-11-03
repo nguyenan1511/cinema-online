@@ -11,3 +11,4 @@ demo/
 assets-src/pikachu-model/
 public/fan/
 server-dist
+.DS_Store

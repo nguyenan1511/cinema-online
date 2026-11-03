@@ -204,7 +204,7 @@ function ChatInput({ onSend, onClose, compact }: { onSend: (t: string) => string
   const [text, setText] = useState("");
   const [err, setErr] = useState<string | null>(null);
   const ref = useRef<HTMLInputElement>(null);
-  useEffect(() => { ref.current?.focus(); }, []);
+  useEffect(() => { if (!compact) ref.current?.focus(); }, [compact]); // the always-on bar mustn't grab focus (and pop the phone keyboard)
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
     const problem = onSend(text);
@@ -216,7 +216,7 @@ function ChatInput({ onSend, onClose, compact }: { onSend: (t: string) => string
   return (
     <form onSubmit={submit} className={`chat-input ${compact ? "" : "chat-input--float"}`}>
       <input ref={ref} value={text} onChange={(e) => { setText(e.target.value); setErr(null); }} maxLength={MAX_CHAT * 2} enterKeyHint="send"
-        onKeyDown={(e) => { if (e.key === "Escape") { e.preventDefault(); onClose(); } }}
+        onKeyDown={(e) => { if (e.key === "Escape") { e.preventDefault(); e.currentTarget.blur(); onClose(); } }}
         placeholder="Nhắn cả rạp…" aria-label="Nhắn tin cho mọi người trong rạp" aria-invalid={!!err} />
       <button type="submit" disabled={!text.trim()} aria-label="Gửi">Gửi</button>
       {err && <p role="alert" className="chat-err">{err}</p>}
@@ -481,6 +481,33 @@ export function WorldApp() {
     setClawResult(null);
   };
   const doEmote = useCallback((e: RtEmote) => world.current?.emote(e), []);
+
+  /** Close the souvenir ticket screen and get up from the seat. */
+  const closeStub = () => { setEnded(false); world.current?.standUp(); };
+  /** One "back" action for Esc and the mobile exit buttons: innermost layer first. */
+  const goBack = () => {
+    if (bagOpen) return setBagOpen(false);
+    if (chatOpen) return setChatOpen(false);
+    if (eTicket) return setETicket(false);
+    if (dialog) { if (dialog === "counter") world.current?.leaveQueue(); return setDialog(null); }
+    if (activity) return endActivity();
+    if (ended) return closeStub();
+    world.current?.exitHall();
+  };
+  const goBackRef = useRef(goBack);
+  goBackRef.current = goBack;
+  useEffect(() => {
+    if (!started) return;
+    const onEsc = (e: KeyboardEvent) => {
+      if (e.key !== "Escape") return;
+      const el = e.target as HTMLElement;
+      if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") return; // the input handles its own Esc (closes chat)
+      e.preventDefault();
+      goBackRef.current();
+    };
+    addEventListener("keydown", onEsc);
+    return () => removeEventListener("keydown", onEsc);
+  }, [started]);
   useEffect(() => () => { video.current?.pause(); }, []);
 
   const film = filmById.get(filmId);
@@ -654,7 +681,12 @@ export function WorldApp() {
                 <p className="letterbox-kicker">{showLeft !== null ? "ĐANG CHIẾU" : `PHÒNG ${purchase.room} · SUẤT ${formatShowtime(purchase.t.st)}`}</p>
                 <p className="letterbox-title">{showLeft !== null ? purchase.filmTitle : <>Tìm ghế <span className="text-bulb">{purchase.seat}</span></>}</p>
               </div>
-              <Presence status={netStatus} count={peerCount + 1} onChat={() => setChatOpen(true)} />
+              <div className="flex items-center gap-2">
+                <Presence status={netStatus} count={peerCount + 1} onChat={() => setChatOpen(true)} />
+                <button className="exit-btn" onClick={() => world.current?.exitHall()} aria-label={showLeft !== null ? "Đứng dậy rời ghế (Esc)" : "Ra khỏi phòng chiếu (Esc)"}>
+                  <span aria-hidden>←</span><span>{showLeft !== null ? "Rời ghế" : "Ra sảnh"}</span>{!touch && <kbd>Esc</kbd>}
+                </button>
+              </div>
             </div>
           </header>
           {showLeft !== null && danmakuOn && <Danmaku lines={chat} />}
@@ -668,9 +700,8 @@ export function WorldApp() {
                     <button className="lb-btn" onClick={() => { const v = video.current; if (!v) return; v.muted = !v.muted; setMuted(v.muted); if (v.paused && v.currentTime > 0) v.play().catch(() => {}); }}
                       aria-label={muted ? "Bật tiếng" : "Tắt tiếng"}>{muted ? "🔇" : "🔊"}</button>
                   )}
-                  <button className="lb-btn" onClick={() => world.current?.standUp()} aria-label="Đứng dậy rời ghế" title="Đứng dậy">⇡</button>
-                  <button className={`lb-btn ${danmakuOn ? "lb-btn--on" : ""}`} onClick={() => setDanmakuOn((d) => !d)} aria-pressed={danmakuOn} aria-label="Bình luận bay trên màn hình">弾</button>
-                  <div className="flex-1 min-w-0"><ChatInput compact onSend={sendChat} onClose={() => {}} /></div>
+                  <button className={`lb-btn ${danmakuOn ? "lb-btn--on" : ""}`} onClick={() => setDanmakuOn((d) => !d)} aria-pressed={danmakuOn} aria-label="Bình luận bay trên màn hình" title="Live comments"><span className="text-[11px] font-extrabold tracking-wide">CMT</span></button>
+                  <div className="flex-1 min-w-0"><ChatInput compact onSend={sendChat} onClose={() => goBackRef.current()} /></div>
                   <button disabled={showLeft > 0} onClick={() => setEnded(true)} className="lb-cta">
                     {showLeft > 0 ? `${showLeft}s` : "Vé kỷ niệm"}
                   </button>
@@ -883,7 +914,10 @@ export function WorldApp() {
 
       {ended && purchase && me && (
         <div className="absolute inset-0 z-50 overflow-y-auto bg-hall/85 backdrop-blur-sm sheet-in">
-          <div className="mx-auto max-w-[430px] min-h-dvh flex flex-col">
+          <button className="exit-btn stub-close" onClick={closeStub} aria-label="Đóng vé, quay lại rạp (Esc)">
+            <span aria-hidden>✕</span><span>Đóng</span>{!touch && <kbd>Esc</kbd>}
+          </button>
+          <div className="mx-auto max-w-[430px] min-h-dvh flex flex-col pt-[calc(max(12px,env(safe-area-inset-top))+48px)]">
             <Stub t={purchase.t} me={me} toast={setToast} onSeatConflict={() => setToast("Ghế vừa có người, chọn ghế khác")} />
           </div>
         </div>

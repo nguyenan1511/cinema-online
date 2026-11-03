@@ -728,6 +728,14 @@ export class World {
   }
 
   /** Get up from the seat into the aisle; the film stops and the house lights come back up. */
+  /** "Exit" from the hall (Esc / mobile button): stand up if seated, otherwise walk out the back door. */
+  exitHall() {
+    if (this.zone !== "hall") return false;
+    if (this.seated) this.standUp();
+    else this.leaveHall();
+    return true;
+  }
+
   standUp() {
     if (!this.seated) return;
     const p = seatWorld(this.mySeat);

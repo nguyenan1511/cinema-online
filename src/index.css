@@ -112,6 +112,12 @@ input { caret-color: var(--color-bulb); }
   .letterbox-credit { max-width: 760px; margin: 6px auto 0; padding: 0 14px; font-size: 11px; color: rgba(246,233,228,.45); }
   .lb-btn { flex: none; width: 44px; height: 44px; display: grid; place-items: center; border-radius: 50%; border: 1px solid rgba(246,233,228,.2); font-size: 17px; color: var(--color-hall-text); }
   .lb-btn--on { border-color: var(--color-bulb); color: var(--color-bulb); }
+  .exit-btn { display: inline-flex; align-items: center; gap: 6px; min-height: 40px; padding: 0 12px; border-radius: 999px; white-space: nowrap; pointer-events: auto;
+    background: rgba(16,6,8,.82); border: 1px solid rgba(246,233,228,.3); color: var(--color-hall-text); font-size: 13px; font-weight: 800; }
+  .exit-btn:hover { border-color: var(--color-bulb); }
+  .exit-btn kbd { font-family: inherit; font-size: 10px; font-weight: 800; padding: 1px 5px; border-radius: 4px; background: rgba(246,233,228,.15); color: rgba(246,233,228,.8); }
+  .stub-close { position: fixed; z-index: 55; top: max(12px, env(safe-area-inset-top)); right: 12px; }
+  @media (max-width: 420px) { .letterbox-row .lb-btn { width: 40px; height: 40px; } .letterbox-row .lb-cta { padding: 0 12px; } }
   .lb-cta { flex: none; height: 44px; padding: 0 16px; border-radius: 999px; background: var(--color-bulb); color: var(--color-ink); font-weight: 800; font-size: 14px; }
   .lb-cta:disabled { background: transparent; color: rgba(246,233,228,.6); border: 1px solid rgba(246,233,228,.2); }
 
