@@ -30,6 +30,7 @@ const HERO_BLURB: Partial<Record<HeroId, string>> = {
   Knight: "Giáp bạc, kiếm sáng", Barbarian: "Rìu to, mũ sừng", Mage: "Áo choàng, gậy phép", Rogue: "Nhanh nhẹn, dao găm", Rogue_Hooded: "Trùm mũ, bí ẩn",
   SinhVien: "Hoodie, balo", CongSo: "Sơ mi, cà vạt, kính", CoNang: "Váy hồng, tóc dài", Pikachu: "Model riêng · chỉ bản dev",
   Model1: "Mũ nồi, sơ mi caro", Model2: "Trái chuối tăng động", Model3: "Cún Corgi chân ngắn",
+  Skeleton_Warrior: "Mũ sắt, áo choàng rách", Skeleton_Mage: "Mũ phù thủy, xương kêu lách cách", Skeleton_Rogue: "Mũ trùm, áo choàng", Skeleton_Minion: "Nhỏ con, lúc nào cũng cười",
 };
 const viDate = (d: string) => d.split("-").reverse().join("/");
 /** Short "valid ticket" double beep from the gate scanner (Web Audio, no file). */
