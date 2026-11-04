@@ -4,7 +4,8 @@
 import { graphemes, maskProfanity, validateName } from "./ticket";
 import { SEAT_RE } from "./seats";
 
-export const HEROES = ["Knight", "Barbarian", "Mage", "Rogue", "Rogue_Hooded", "SinhVien", "CongSo", "CoNang", "Pikachu", "Model1", "Model2", "Model3"] as const;
+export const HEROES = ["Knight", "Barbarian", "Mage", "Rogue", "Rogue_Hooded", "SinhVien", "CongSo", "CoNang", "Pikachu", "Model1", "Model2", "Model3",
+  "Skeleton_Warrior", "Skeleton_Mage", "Skeleton_Rogue", "Skeleton_Minion"] as const;
 export type RtHero = (typeof HEROES)[number];
 export const MAX_CHAT = 120; // graphemes
 export const MAX_PEERS = 60;

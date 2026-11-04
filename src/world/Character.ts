@@ -1,4 +1,4 @@
-// Heroes: KayKit Adventurers (CC0, Kay Lousberg — www.kaylousberg.com), optimized by
+// Heroes: KayKit Adventurers + Skeletons (CC0, Kay Lousberg — www.kaylousberg.com), optimized by
 // scripts/optimize-heroes.mjs into public/heroes/*.glb (6 clips, 1 signature prop, meshopt).
 // Each Character clones the rigged template (SkeletonUtils) and drives its own AnimationMixer.
 // Local forward is +z; root sits at the feet.
@@ -9,7 +9,10 @@ import { clone as cloneSkinned } from "three/addons/utils/SkeletonUtils.js";
 
 import { buildPerson, CIVIL_STYLES, PUPPET_HIP, STAFF_STYLES } from "./people";
 
-const RIGGED = ["Knight", "Barbarian", "Mage", "Rogue", "Rogue_Hooded"] as const;
+const ADVENTURERS = ["Knight", "Barbarian", "Mage", "Rogue", "Rogue_Hooded"] as const;
+/** KayKit Skeletons: same Rig_Medium + clip names as the adventurers, no hand props. */
+const SKELETONS = ["Skeleton_Warrior", "Skeleton_Mage", "Skeleton_Rogue", "Skeleton_Minion"] as const;
+const RIGGED = [...ADVENTURERS, ...SKELETONS] as const;
 const CIVIL = ["SinhVien", "CongSo", "CoNang"] as const;
 const STAFF = ["StaffTicket", "StaffSnack", "StaffUsher"] as const;
 /**
@@ -37,6 +40,7 @@ export const HERO_NAMES: Record<HeroId, string> = {
   Knight: "Hiệp sĩ", Barbarian: "Chiến binh", Mage: "Pháp sư", Rogue: "Sát thủ", Rogue_Hooded: "Thích khách",
   SinhVien: "Sinh viên", CongSo: "Dân công sở", CoNang: "Cô nàng",
   StaffTicket: "Nhân viên bán vé", StaffSnack: "Nhân viên bắp nước", StaffUsher: "Nhân viên soát vé", Pikachu: "Pikachu",
+  Skeleton_Warrior: "Bộ xương chiến binh", Skeleton_Mage: "Bộ xương pháp sư", Skeleton_Rogue: "Bộ xương lãng khách", Skeleton_Minion: "Bộ xương lính lác",
   Model1: "Anh Râu", Model2: "Chuối Vui", Model3: "Corgi",
 };
 const PROP: Partial<Record<HeroId, string>> = { Knight: "1H_Sword", Barbarian: "1H_Axe", Mage: "2H_Staff", Rogue: "Knife", Rogue_Hooded: "Knife" };
@@ -44,7 +48,7 @@ const HEIGHT = 1.5; // metres, top of hat/helmet (KayKit heads/hats are wide; ke
 const FONT = '"Be Vietnam Pro", sans-serif';
 
 export interface Look { hero: HeroId; staff?: boolean }
-const CROWD: HeroId[] = [...RIGGED, ...CIVIL];
+const CROWD: HeroId[] = [...ADVENTURERS, ...CIVIL]; // NPC crowd stays human; skeletons are player picks
 export function lookFromSeed(seed: number): Look {
   return { hero: CROWD[Math.abs(Math.floor(Math.sin(seed * 9301 + 49297) * 233280)) % CROWD.length] };
 }
